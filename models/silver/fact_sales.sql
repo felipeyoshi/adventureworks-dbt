@@ -38,7 +38,10 @@ sales_merged as (
         fi.ExtendedAmount * cr.AverageRate as ExtendedAmountConverted,
         fi.DiscountAmount * cr.AverageRate as DiscountAmountConverted,
         fi.SalesAmount * cr.AverageRate as SalesAmountConverted,
+        fi.ProductStandardCost * cr.AverageRate as ProductStandardCostConverted,
+        fi.TotalProductCost * cr.AverageRate as TotalProductCostConverted,
         fi.TaxAmt * cr.AverageRate as TaxAmtConverted,
+        fi.Freight * cr.AverageRate as FreightConverted,
         'Internet' as SalesChannel
     from internetsales fi
     join currency cr
@@ -81,7 +84,10 @@ sales_merged as (
         fr.ExtendedAmount * cr.AverageRate as ExtendedAmountConverted,
         fr.DiscountAmount * cr.AverageRate as DiscountAmountConverted,
         fr.SalesAmount * cr.AverageRate as SalesAmountConverted,
+        fr.ProductStandardCost * cr.AverageRate as ProductStandardCostConverted,
+        fr.TotalProductCost * cr.AverageRate as TotalProductCostConverted,
         fr.TaxAmt * cr.AverageRate as TaxAmtConverted,
+        fr.Freight * cr.AverageRate as FreightConverted,
         'Reseller' as SalesChannel
     from resellersales fr
     join currency cr
