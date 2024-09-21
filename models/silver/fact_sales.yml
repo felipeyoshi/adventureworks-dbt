@@ -1,0 +1,108 @@
+version: 2
+
+models:
+  - name: fact_sales
+    description: "A unified fact table that merges FactInternetSales and FactResellerSales, with currency conversions applied to key fields."
+    columns:
+      - name: ProductKey
+        description: "The key for the product being sold."
+        tests:
+          - not_null
+
+      - name: OrderDateKey
+        description: "The key representing the order date."
+        tests:
+          - not_null
+
+      - name: DueDateKey
+        description: "The key representing the due date of the order."
+
+      - name: ShipDateKey
+        description: "The key representing the ship date of the order."
+
+      - name: CustomerKey
+        description: "The key for the customer making the purchase (only applicable for Internet Sales)."
+
+      - name: ResellerKey
+        description: "The key for the reseller making the purchase (only applicable for Reseller Sales)."
+
+      - name: EmployeeKey
+        description: "The key for the employee handling the reseller sales."
+
+      - name: PromotionKey
+        description: "The key for the promotion applied to the sale."
+
+      - name: CurrencyKey
+        description: "The key for the currency in which the sale was made."
+
+      - name: SalesTerritoryKey
+        description: "The key representing the sales territory."
+
+      - name: SalesOrderNumber
+        description: "The sales order number for tracking the order."
+        tests:
+          - not_null
+
+      - name: SalesOrderLineNumber
+        description: "The line number within the sales order."
+        tests:
+          - not_null
+
+      - name: RevisionNumber
+        description: "The revision number of the sales order."
+
+      - name: OrderQuantity
+        description: "The quantity of items ordered."
+
+      - name: UnitPrice
+        description: "The unit price of the product sold."
+
+      - name: ExtendedAmount
+        description: "The total price before any discounts."
+
+      - name: ExtendedAmountConverted
+        description: "The total price before discounts, converted to USD using the average currency rate."
+
+      - name: DiscountAmount
+        description: "The total discount applied to the sale."
+
+      - name: DiscountAmountConverted
+        description: "The total discount amount, converted to USD using the average currency rate."
+
+      - name: ProductStandardCost
+        description: "The standard cost of the product."
+
+      - name: TotalProductCost
+        description: "The total cost incurred for the product."
+
+      - name: SalesAmount
+        description: "The total amount of the sale, after discounts."
+        tests:
+          - not_null
+
+      - name: SalesAmountConverted
+        description: "The total sale amount, after discounts, converted to USD using the average currency rate."
+
+      - name: TaxAmt
+        description: "The total tax amount applied to the sale."
+
+      - name: TaxAmtConverted
+        description: "The total tax amount, converted to USD using the average currency rate."
+
+      - name: Freight
+        description: "The freight charges associated with the sale."
+
+      - name: CarrierTrackingNumber
+        description: "The tracking number for the carrier used to ship the product."
+
+      - name: CustomerPONumber
+        description: "The purchase order number provided by the customer."
+
+      - name: OrderDate
+        description: "The date on which the order was placed."
+
+      - name: DueDate
+        description: "The date by which the order is expected to be fulfilled."
+
+      - name: ShipDate
+        description: "The date on which the order was shipped."

@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  - name: dim_geography
+    description: "Cleansed and transformed geography dimension data for analytics consumption."
+    columns:
+      - name: GeographyKey
+        description: "Primary key for the geography dimension."
+        tests:
+          - not_null
+      - name: City
+        description: "The city within the geography."
+      - name: StateProvinceCode
+        description: "Code representing the state or province."
+      - name: StateProvinceName
+        description: "Name of the state or province."
+      - name: CountryRegionCode
+        description: "Code representing the country or region."
+      - name: EnglishCountryRegionName
+        description: "Name of the country or region in English."
+      - name: SpanishCountryRegionName
+        description: "Name of the country or region in Spanish."
+      - name: FrenchCountryRegionName
+        description: "Name of the country or region in French."
+      - name: PostalCode
+        description: "The postal code for the geographic region."
+      - name: SalesTerritoryKey
+        description: "Foreign key linking to the sales territory dimension."
+        tests:
+          - not_null
+      - name: IpAddressLocator
+        description: "IP address locator for the geography."

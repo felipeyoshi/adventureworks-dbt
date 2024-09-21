@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: fact_internet_sales_reason
+    description: "Cleansed and transformed fact table linking internet sales orders with sales reasons for analytics consumption."
+    columns:
+      - name: SalesOrderNumber
+        description: "The sales order number associated with the sales."
+        tests:
+          - not_null
+      - name: SalesOrderLineNumber
+        description: "The line number of the sales order."
+        tests:
+          - not_null
+      - name: SalesReasonKey
+        description: "Foreign key referencing the sales reason dimension."
+        tests:
+          - not_null

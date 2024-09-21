@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: dim_product_category
+    description: "Cleansed and transformed product category dimension data for analytics consumption."
+    columns:
+      - name: ProductCategoryKey
+        description: "Primary key for the product category dimension."
+        tests:
+          - not_null
+      - name: ProductCategoryAlternateKey
+        description: "Alternate key for the product category."
+        tests:
+          - not_null
+      - name: EnglishProductCategoryName
+        description: "Name of the product category in English."
+      - name: SpanishProductCategoryName
+        description: "Name of the product category in Spanish."
+      - name: FrenchProductCategoryName
+        description: "Name of the product category in French."

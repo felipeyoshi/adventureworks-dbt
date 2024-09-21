@@ -1,0 +1,60 @@
+version: 2
+
+models:
+  - name: dim_customer
+    description: "Cleansed and transformed customer data for analytics consumption."
+    columns:
+      - name: CustomerKey
+        description: "Primary key for the customer."
+        tests:
+          - not_null
+      - name: GeographyKey
+        description: "Foreign key representing customer geography."
+        tests:
+          - not_null
+      - name: CustomerAlternateKey
+        description: "Alternate key for the customer."
+        tests:
+          - not_null
+      - name: Title
+        description: "Customer's title (Mr., Mrs., etc.)."
+      - name: FirstName
+        description: "Customer's first name."
+      - name: MiddleName
+        description: "Customer's middle name."
+      - name: LastName
+        description: "Customer's last name."
+      - name: NameStyle
+        description: "Indicates whether the name is in Western or Eastern style."
+      - name: BirthDate
+        description: "Customer's date of birth."
+      - name: MaritalStatusFormatted
+        description: "Formatted marital status (Married/Single/Unknown)."
+      - name: GenderFormatted
+        description: "Formatted gender (Male/Female/Unknown)."
+      - name: EmailAddress
+        description: "Customer's email address."
+      - name: YearlyIncome
+        description: "Customer's yearly income."
+      - name: TotalChildren
+        description: "Total number of children the customer has."
+      - name: NumberChildrenAtHome
+        description: "Number of children currently living at home."
+      - name: Education
+        description: "Education level of the customer (combined from multiple languages)."
+      - name: Occupation
+        description: "Occupation of the customer (combined from multiple languages)."
+      - name: HouseOwnerFlag
+        description: "Flag indicating whether the customer owns a house."
+      - name: NumberCarsOwned
+        description: "Number of cars owned by the customer."
+      - name: AddressLine1
+        description: "First line of the customer's address."
+      - name: AddressLine2
+        description: "Second line of the customer's address (if any)."
+      - name: Phone
+        description: "Customer's phone number."
+      - name: DateFirstPurchase
+        description: "Date of the customer's first purchase."
+      - name: CommuteDistance
+        description: "Distance the customer commutes to work."

@@ -1,0 +1,6 @@
+This is the schema of table {table}
+
+{schema}
+
+Your task is to write a dbt model with the best practices to a Medallion Silver layer.
+Add the yml file with all columns and the not null dbt tests for the key columns.

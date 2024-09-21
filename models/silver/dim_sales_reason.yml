@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: dim_sales_reason
+    description: "Cleansed and transformed sales reason dimension data for analytics consumption."
+    columns:
+      - name: SalesReasonKey
+        description: "Primary key for the sales reason dimension."
+        tests:
+          - not_null
+      - name: SalesReasonAlternateKey
+        description: "Alternate key for the sales reason."
+        tests:
+          - not_null
+      - name: SalesReasonName
+        description: "Name of the sales reason."
+      - name: SalesReasonReasonType
+        description: "Type of the sales reason."

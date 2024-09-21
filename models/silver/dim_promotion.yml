@@ -1,0 +1,42 @@
+version: 2
+
+models:
+  - name: dim_promotion
+    description: "Cleansed and transformed promotion dimension data for analytics consumption."
+    columns:
+      - name: PromotionKey
+        description: "Primary key for the promotion dimension."
+        tests:
+          - not_null
+      - name: PromotionAlternateKey
+        description: "Alternate key for the promotion."
+        tests:
+          - not_null
+      - name: EnglishPromotionName
+        description: "Name of the promotion in English."
+      - name: SpanishPromotionName
+        description: "Name of the promotion in Spanish."
+      - name: FrenchPromotionName
+        description: "Name of the promotion in French."
+      - name: DiscountPct
+        description: "Discount percentage applied in the promotion."
+      - name: EnglishPromotionType
+        description: "Type of the promotion in English."
+      - name: SpanishPromotionType
+        description: "Type of the promotion in Spanish."
+      - name: FrenchPromotionType
+        description: "Type of the promotion in French."
+      - name: EnglishPromotionCategory
+        description: "Category of the promotion in English."
+      - name: SpanishPromotionCategory
+        description: "Category of the promotion in Spanish."
+      - name: FrenchPromotionCategory
+        description: "Category of the promotion in French."
+      - name: StartDate
+        description: "Date when the promotion starts."
+      - name: EndDate
+        description: "Date when the promotion ends."
+      - name: MinQty
+        description: "Minimum quantity required to avail the promotion."
+      - name: MaxQty
+        description: "Maximum quantity eligible for the promotion."

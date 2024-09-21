@@ -1,0 +1,48 @@
+version: 2
+
+models:
+  - name: dim_date
+    description: "Cleansed and transformed date dimension data for analytics consumption."
+    columns:
+      - name: DateKey
+        description: "Primary key for the date dimension."
+        tests:
+          - not_null
+      - name: FullDateAlternateKey
+        description: "Alternate key representing the full date in 'YYYY-MM-DD' format."
+        tests:
+          - not_null
+      - name: DayNumberOfWeek
+        description: "The number of the day in the week."
+      - name: EnglishDayNameOfWeek
+        description: "Name of the day in English."
+      - name: SpanishDayNameOfWeek
+        description: "Name of the day in Spanish."
+      - name: FrenchDayNameOfWeek
+        description: "Name of the day in French."
+      - name: DayNumberOfMonth
+        description: "The day number within the month."
+      - name: DayNumberOfYear
+        description: "The day number within the year."
+      - name: WeekNumberOfYear
+        description: "The week number within the year."
+      - name: EnglishMonthName
+        description: "Name of the month in English."
+      - name: SpanishMonthName
+        description: "Name of the month in Spanish."
+      - name: FrenchMonthName
+        description: "Name of the month in French."
+      - name: MonthNumberOfYear
+        description: "The month number within the year."
+      - name: CalendarQuarter
+        description: "The quarter of the calendar year."
+      - name: CalendarYear
+        description: "The year in the calendar."
+      - name: CalendarSemester
+        description: "The semester of the calendar year."
+      - name: FiscalQuarter
+        description: "The quarter of the fiscal year."
+      - name: FiscalYear
+        description: "The fiscal year."
+      - name: FiscalSemester
+        description: "The semester of the fiscal year."

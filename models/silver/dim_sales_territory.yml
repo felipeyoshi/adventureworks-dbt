@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: dim_sales_territory
+    description: "Cleansed and transformed sales territory dimension data for analytics consumption."
+    columns:
+      - name: SalesTerritoryKey
+        description: "Primary key for the sales territory dimension."
+        tests:
+          - not_null
+      - name: SalesTerritoryAlternateKey
+        description: "Alternate key for the sales territory."
+        tests:
+          - not_null
+      - name: SalesTerritoryRegion
+        description: "Region of the sales territory."
+      - name: SalesTerritoryCountry
+        description: "Country of the sales territory."
+      - name: SalesTerritoryGroup
+        description: "Group to which the sales territory belongs."

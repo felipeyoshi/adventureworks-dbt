@@ -1,0 +1,82 @@
+version: 2
+
+models:
+  - name: dim_product
+    description: "Cleansed and transformed product data for analytics consumption."
+    columns:
+      - name: ProductKey
+        description: "Primary key for the product."
+        tests:
+          - not_null
+      - name: ProductAlternateKey
+        description: "Alternate key for the product."
+        tests:
+          - not_null
+      - name: ProductSubcategoryKey
+        description: "Foreign key linking to the product subcategory."
+        tests:
+          - not_null
+      - name: WeightUnitMeasureCode
+        description: "Code representing the unit of measure for weight."
+      - name: SizeUnitMeasureCode
+        description: "Code representing the unit of measure for size."
+      - name: EnglishProductName
+        description: "Product name in English."
+      - name: SpanishProductName
+        description: "Product name in Spanish."
+      - name: FrenchProductName
+        description: "Product name in French."
+      - name: StandardCost
+        description: "Standard cost of the product."
+      - name: FinishedGoodsFlag
+        description: "Flag indicating whether the product is a finished good."
+      - name: Color
+        description: "Color of the product."
+      - name: SafetyStockLevel
+        description: "Minimum quantity of stock before reordering."
+      - name: ReorderPoint
+        description: "The quantity of stock at which a reorder is triggered."
+      - name: ListPrice
+        description: "List price of the product."
+      - name: Size
+        description: "Size of the product."
+      - name: SizeRange
+        description: "Range of sizes the product is available in."
+      - name: Weight
+        description: "Weight of the product."
+      - name: DaysToManufacture
+        description: "Number of days required to manufacture the product."
+      - name: ProductLine
+        description: "Product line the product belongs to."
+      - name: DealerPrice
+        description: "Dealer price for the product."
+      - name: Class
+        description: "Class of the product."
+      - name: Style
+        description: "Style of the product."
+      - name: ModelName
+        description: "Name of the product model."
+      - name: EnglishDescription
+        description: "Product description in English."
+      - name: FrenchDescription
+        description: "Product description in French."
+      - name: ChineseDescription
+        description: "Product description in Chinese."
+      - name: ArabicDescription
+        description: "Product description in Arabic."
+      - name: HebrewDescription
+        description: "Product description in Hebrew."
+      - name: ThaiDescription
+        description: "Product description in Thai."
+      - name: GermanDescription
+        description: "Product description in German."
+      - name: JapaneseDescription
+        description: "Product description in Japanese."
+      - name: TurkishDescription
+        description: "Product description in Turkish."
+      - name: StartDate
+        description: "Date when the product became available."
+      - name: EndDate
+        description: "Date when the product was discontinued."
+      - name: Status
+        description: "Current status of the product."
