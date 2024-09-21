@@ -1,0 +1,35 @@
+This is the schema of medallion silver table dim_customer
+
+CUSTOMERKEY
+GEOGRAPHYKEY
+CUSTOMERALTERNATEKEY
+TITLE
+FIRSTNAME
+MIDDLENAME
+LASTNAME
+NAMESTYLE
+BIRTHDATE
+MARITALSTATUS
+SUFFIX
+GENDER
+EMAILADDRESS
+YEARLYINCOME
+TOTALCHILDREN
+NUMBERCHILDRENATHOME
+EDUCATION
+OCCUPATION
+HOUSEOWNERFLAG
+NUMBERCARSOWNED
+ADDRESSLINE1
+ADDRESSLINE2
+PHONE
+DATEFIRSTPURCHASE
+COMMUTEDISTANCE
+MARITALSTATUSFORMATTED
+GENDERFORMATTED
+BIRTHYEAR
+
+Your task is to write a dbt model with the best practices to a Medallion Gold layer.
+This model is called dim_customer_segmented and apply the RFM model described in https://medium.com/@shirvaron/customer-segmentation-implementing-the-rfm-model-with-sql-8d07fd990d32.
+Please follow all the steps creating a enriched dim_customer table with the additional column segment!
+Finally, add the yml file with all columns and the not null dbt tests for the key columns.

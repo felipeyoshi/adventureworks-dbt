@@ -32,7 +32,8 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   adventureworks:
     silver:
-      +schema: silver
+      materialized: table
+    gold:
       materialized: table
 
 seeds:

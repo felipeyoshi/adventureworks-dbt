@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: dim_customer_segment
+    description: "This model applies the RFM (Recency, Frequency, Monetary) model to segment customers based on their purchase behavior."
+    columns:
+      - name: customerkey
+        description: "Unique key for each customer."
+        tests:
+          - not_null
+          - unique
+      - name: norm_rfm_score
+        description: "Normalized RFM score based on weighted Recency, Frequency, and Monetary values."
+      - name: segment
+        description: "Customer segment based on the normalized RFM score. Categories include Best Customers, Loyal Customers, At Risk, and Other."
+        tests:
+          - not_null
