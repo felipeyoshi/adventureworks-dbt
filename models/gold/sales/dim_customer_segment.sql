@@ -52,8 +52,8 @@ customer_segmentation as (
         customerkey,
         norm_rfm_score,
         case
-            when norm_rfm_score >= 0.95 then 'Best Customers'
-            when norm_rfm_score >= 0.80 THEN 'Loyal Customers'
+            when norm_rfm_score >= 0.90 then 'Best Customers'
+            when norm_rfm_score >= 0.75 THEN 'Loyal Customers'
             when norm_rfm_score >= 0.50 THEN 'At Risk'
             else 'Other'
         end as segment
