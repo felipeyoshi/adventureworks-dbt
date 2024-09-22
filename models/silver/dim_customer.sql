@@ -48,7 +48,7 @@ cleaned as (
             when Gender = 'F' then 'Female'
             else 'Unknown'
         end as GenderFormatted,
-        date_trunc('year', BirthDate) as BirthYear
+        year(BirthDate) as BirthYear
     from base
 )
 
