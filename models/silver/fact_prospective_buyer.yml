@@ -1,0 +1,56 @@
+version: 2
+
+models:
+  - name: fact_prospective_buyer
+    description: "Cleansed and transformed fact table for prospective buyers for analytics consumption."
+    columns:
+      - name: ProspectiveBuyerKey
+        description: "Primary key for the prospective buyer."
+        tests:
+          - not_null
+      - name: ProspectAlternateKey
+        description: "Alternate key for the prospective buyer."
+      - name: FirstName
+        description: "First name of the prospective buyer."
+      - name: MiddleName
+        description: "Middle name of the prospective buyer."
+      - name: LastName
+        description: "Last name of the prospective buyer."
+      - name: BirthDate
+        description: "Birth date of the prospective buyer."
+      - name: MaritalStatus
+        description: "Marital status of the prospective buyer."
+      - name: Gender
+        description: "Gender of the prospective buyer."
+      - name: EmailAddress
+        description: "Email address of the prospective buyer."
+      - name: YearlyIncome
+        description: "Yearly income of the prospective buyer."
+      - name: TotalChildren
+        description: "Total number of children of the prospective buyer."
+      - name: NumberChildrenAtHome
+        description: "Number of children living at home with the prospective buyer."
+      - name: Education
+        description: "Education level of the prospective buyer."
+      - name: Occupation
+        description: "Occupation of the prospective buyer."
+      - name: HouseOwnerFlag
+        description: "Flag indicating if the prospective buyer is a house owner."
+      - name: NumberCarsOwned
+        description: "Number of cars owned by the prospective buyer."
+      - name: AddressLine1
+        description: "First line of the prospective buyer's address."
+      - name: AddressLine2
+        description: "Second line of the prospective buyer's address."
+      - name: City
+        description: "City of the prospective buyer's address."
+      - name: StateProvinceCode
+        description: "State or province code of the prospective buyer's address."
+      - name: PostalCode
+        description: "Postal code of the prospective buyer's address."
+      - name: Phone
+        description: "Phone number of the prospective buyer."
+      - name: Salutation
+        description: "Salutation of the prospective buyer (e.g., Mr., Mrs.)."
+      - name: Unknown
+        description: "Placeholder for unknown or missing data."
