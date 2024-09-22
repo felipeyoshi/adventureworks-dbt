@@ -41,7 +41,10 @@ rfm_segments as (
 
 customer_score as (
     select
-        customerkey,   
+        customerkey,
+        recency_score,
+        frequency_score,
+        monetary_score,
         (0.2 * recency_score) + (0.4 * frequency_score) + (0.4 * monetary_score) as rfm_weights,
         percent_rank() over (order by (0.2 * recency_score) + (0.4 * frequency_score) + (0.4 * monetary_score)) as norm_rfm_score
    from rfm_segments
@@ -49,8 +52,7 @@ customer_score as (
 
 customer_segmentation as (
     select
-        customerkey,
-        norm_rfm_score,
+        *,
         case
             when norm_rfm_score >= 0.90 then 'Best Customers'
             when norm_rfm_score >= 0.75 THEN 'Loyal Customers'
@@ -59,8 +61,28 @@ customer_segmentation as (
         end as segment
     from customer_score
     order by norm_rfm_score desc
+),
+
+-- Identify bike purchases
+bike_purchases as (
+    select
+        s.customerkey,
+        sum(case when pc.EnglishProductCategoryName = 'Bikes' then s.orderquantity else 0 end) as NumberBikesOwned,
+        case when sum(case when pc.EnglishProductCategoryName = 'Bikes' then 1 else 0 end) > 0 then 1 else 0 end as BikeBuyer
+    from {{ ref('fact_sales') }} as s
+    left join {{ ref('dim_product') }} as p
+    on s.ProductKey = p.ProductKey
+    left join {{ ref('dim_product_subcategory') }} as ps
+    on p.ProductSubCategoryKey = ps.ProductSubCategoryKey
+    left join {{ ref('dim_product_category') }} as pc
+    on ps.ProductCategoryKey = pc.ProductCategoryKey
+    group by s.customerkey
 )
 
 select
-    *
-from customer_segmentation
+    s.*,
+    p.BikeBuyer,
+    p.NumberBikesOwned
+from customer_segmentation s
+left join bike_purchases p
+on s.customerkey = p.customerkey
