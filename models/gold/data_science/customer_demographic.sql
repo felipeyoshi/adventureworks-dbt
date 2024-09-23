@@ -16,7 +16,8 @@ demographic_features as (
         c.HouseOwnerFlag,
         c.NumberCarsOwned,
         g.EnglishCountryRegionName as Country,
-        s.segment
+        s.segment,
+        s.bikebuyer
     from customers c
     left join geo g on c.GeographyKey = g.GeographyKey
     left join customer_segments s on c.customerkey = s.customerkey
