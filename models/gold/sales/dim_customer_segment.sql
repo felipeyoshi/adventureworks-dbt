@@ -30,12 +30,12 @@ rfm_segments as (
     -- Apply RFM segmentation to assign a score between 1 and 5 for each R, F, and M value
     select
         customerkey,
-        -- Recency Score: 1 to 5 scale (lower is better)
+        -- Recency Score: 0 to 1 scale (lower is better)
         percent_rank() over (order by recency) as recency_score,
-        -- Frequency Score: 1 to 5 scale (higher is better)
-        percent_rank() over (order by frequency) as frequency_score,
-        -- Monetary Score: 1 to 5 scale (higher is better)
-        percent_rank() over (order by monetary) as monetary_score
+        -- Frequency Score: 0 to 1 scale (higher is better)
+        percent_rank() over (order by frequency desc) as frequency_score,
+        -- Monetary Score: 0 to 1 scale (higher is better)
+        percent_rank() over (order by monetary desc) as monetary_score
     from rfm_scores
 ),
 
